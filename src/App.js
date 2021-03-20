@@ -1,11 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
 import App from './pages';
 
-
-export default () => {
+function App2() {
   return (
-      <App />
-  );
-};
+    <App />
+  )
+}
+export default App2;
