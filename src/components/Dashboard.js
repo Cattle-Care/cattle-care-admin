@@ -12,7 +12,7 @@ function Dashboard() {
                 <div className="mx-auto  max-w-screen-xl px-4">
                     <div className="flex flex-wrap -m-4 ">
                         <div className="p-4 md:w-1/4 sm:w-1/2  w-full">
-                            <div className="border-2 border-gray-200 px-4 py-2 rounded-lg ">
+                            <div className="border-2 border-gray-200 px-4 py-2 rounded-lg shadow-lg ">
                                 <div className=" py-5 px-10   flex items-center">
                                     <div className="bg-gray-600  rounded-full h-12 w-12 flex justify-center items-center ">
                                         <KeyboardIcon className="text-white " />
@@ -26,8 +26,8 @@ function Dashboard() {
                                 <p className="leading-relaxed font-medium text-center py-3">+36% Last Month</p>
                             </div>
                         </div>
-                        <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-                            <div className="border-2 border-gray-200 px-4 py-2 rounded-lg">
+                        <div className="p-4 md:w-1/4 sm:w-1/2 w-full ">
+                            <div className="border-2 border-gray-200 px-4 py-2 rounded-lg shadow-lg">
                             <div className=" py-5 px-10   flex items-center">
                                     <div className="bg-red-600  rounded-full h-12 w-12 flex justify-center items-center ">
                                         <PeopleIcon className="text-white " />
@@ -42,7 +42,7 @@ function Dashboard() {
                             </div>
                         </div>
                         <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-                            <div className="border-2 border-gray-200 px-4 py-2 rounded-lg">
+                            <div className="border-2 border-gray-200 px-4 py-2 rounded-lg shadow-lg">
                             <div className=" py-5 px-10   flex items-center">
                                     <div className="bg-blue-700  rounded-full h-12 w-12 flex justify-center items-center ">
                                         <PersonIcon className="text-white " />
@@ -57,7 +57,7 @@ function Dashboard() {
                             </div>
                         </div>
                         <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-                            <div className="border-2 border-gray-200 px-4 py-2 rounded-lg">
+                            <div className="border-2 border-gray-200 px-4 py-2 rounded-lg shadow-lg">
                             <div className=" py-5 px-10   flex items-center">
                                     <div className="bg-purple-400  rounded-full h-12 w-12 flex justify-center items-center ">
                                         <GitHubIcon className="text-white " />

@@ -1,10 +1,13 @@
 import React from 'react';
 import Dashboard from '../components/Dashboard';
+import Header from '../components/Header';
+import Cattel from '../components/Cattel';
 function Home() {
   return (
     <>
-      <Dashboard/>
-      
+      <Header />
+      <Dashboard />
+<Cattel/>
     </>
   );
 }
