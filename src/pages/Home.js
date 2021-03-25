@@ -1,13 +1,16 @@
-import React from 'react';
-import Dashboard from '../components/Dashboard';
-import Header from '../components/Header';
-import Cattel from '../components/Cattel';
+// import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
+import { Link } from 'react-router-dom';
+import Sidebar from '../components/Sidebar';
+import User from "../components/User";
+import Dashboard from "../components/Dashboard";
+import Header from "../components/Header";
+
 function Home() {
   return (
     <>
-      <Header />
-      <Dashboard />
-<Cattel/>
+    <Header/>
+      <Sidebar/>
+      <Dashboard/>
     </>
   );
 }
