@@ -1,8 +1,9 @@
 import React from 'react';
-
+import Layout from '../components/Layout';
 function Cattle() {
     return (
         <>
+          <Layout>
         <div className="mx-auto  max-w-screen-xl ">
             <div className="flex flex-col">
             
@@ -162,6 +163,7 @@ function Cattle() {
   </div>
   </div>
 </div>
+</Layout>
         </>
     )
 }

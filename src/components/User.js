@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import Sidebar from "./Sidebar"
+import Sidebar from "./Sidebar";
+import Layout from '../components/Layout';
 export default function User() {
   return (
     <>
-      
+       <Layout>
       <div class="flex flex-col">
         <div class="-my-2 -ml-8">
           <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -195,6 +196,7 @@ export default function User() {
           </div>
         </div>
       </div>
+      </Layout>
     </>
   );
 }
