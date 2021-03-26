@@ -5,7 +5,7 @@ function Cattle() {
         <>
           <Layout>
         <div className="mx-auto  max-w-screen-xl ">
-            <div className="flex flex-col">
+            <div className="flex flex-col w-11/12 mx-auto">
             
   <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">

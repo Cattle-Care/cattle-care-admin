@@ -9,7 +9,7 @@ import Layout from '../components/Layout';
 function Dashboard() {
     return (
         <>
-            <Layout>
+            
             <section className="text-gray-600  py-5 body-font">
                 <div className="mx-auto  max-w-screen-xl px-4">
                     <div className="flex flex-wrap -m-4 ">
@@ -76,7 +76,7 @@ function Dashboard() {
                     </div>
                 </div>
             </section>
-            </Layout>
+             
         </>
     );
 }
