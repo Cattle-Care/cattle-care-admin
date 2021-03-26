@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 function Sidebar() {
   return (
-    <div className="flex flex-row">
+   
+    <div className="flex flex-row ">
       <div className="scrollbar-thin w-full scrollbar-thumb-gray-300 scrollbar-track-white overflow-y-scroll scrollbar-thumb-rounded-full bg-white items-stretch h-screen shadow-2xl ">
-        <div className="p-6 bg-blue-900">
+        <div className="p-6 bg-blue-900 ">
           <div className="flex flex-row justify-start items-center">
             <img
               className="h-10 w-10 rounded-full"
@@ -169,6 +170,7 @@ function Sidebar() {
         </div>
       </div>
     </div>
+    
   );
 }
 
