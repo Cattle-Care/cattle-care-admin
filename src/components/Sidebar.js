@@ -48,10 +48,13 @@ function Sidebar() {
                   d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
                 />
               </svg>
+              <Link to="/dashboard">
               <a href="#" className="ml-4 text-sm font-semibold">
                 Dashboard
               </a>
+              </Link>
             </div>
+
           </div>
           <div className="bg-transparent py-2 rounded-r-full hover:bg-gray-200 mr-2 hover:text-blue-500">
             <div className="flex flex-row items-center ml-4">
