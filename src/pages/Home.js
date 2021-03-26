@@ -4,15 +4,14 @@ import Sidebar from '../components/Sidebar';
 import Cattle from "../components/Cattle";
 import Dashboard from "../components/Dashboard";
 import Header from "../components/Header";
+import Layout from '../components/Layout';
 
 function Home() {
   return (
-    <>
-    <Header/>
-      <Sidebar/>
+    <Layout>
+     
       <Dashboard/>
-      <Cattle/>
-    </>
+    </Layout>
   );
 }
 
