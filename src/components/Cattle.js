@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Cattel() {
+function Cattle() {
     return (
         <>
         <div className="mx-auto  max-w-screen-xl ">
@@ -166,4 +166,4 @@ function Cattel() {
     )
 }
 
-export default Cattel
+export default Cattle
