@@ -4,14 +4,13 @@ import Sidebar from '../components/Sidebar';
 import User from "../components/User";
 import Dashboard from "../components/Dashboard";
 import Header from "../components/Header";
+import Layout from '../components/Layout';
 
 function Home() {
   return (
-    <>
-    <Header/>
-      <Sidebar/>
+    <Layout>
       <Dashboard/>
-    </>
+    </Layout>
   );
 }
 
