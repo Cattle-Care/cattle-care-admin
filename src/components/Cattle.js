@@ -5,7 +5,7 @@ function Cattle() {
         <>
           <Layout>
         <div className="mx-auto  max-w-screen-xl ">
-            <div className="flex flex-col w-11/12 mx-auto">
+            <div className="flex flex-col w-11/12 mx-auto py-5">
             
   <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -37,7 +37,7 @@ function Cattle() {
               <td className="px-6 py-4 whitespace-nowrap">
                 <div className="flex items-center">
                    
-                  <div className="ml-4">
+                  <div className=" ">
                     <div className="text-sm font-medium text-gray-900">
                       Jane Cooper
                     </div>
@@ -67,38 +67,7 @@ function Cattle() {
               <td className="px-6 py-4 whitespace-nowrap">
                 <div className="flex items-center">
                    
-                  <div className="ml-4">
-                    <div className="text-sm font-medium text-gray-900">
-                      Jane Cooper
-                    </div>
-                    <div className="text-sm text-gray-500">
-                      jane.cooper@example.com
-                    </div>
-                  </div>
-                </div>
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
-                <div className="text-sm text-gray-500">Optimization</div>
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap">
-                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                  Active
-                </span>
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                Admin
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <a href="#" className="text-indigo-600 hover:text-indigo-900">Edit</a>
-              </td>
-            </tr>
-
-            <tr>
-              <td className="px-6 py-4 whitespace-nowrap">
-                <div className="flex items-center">
-                   
-                  <div className="ml-4">
+                  <div className=" ">
                     <div className="text-sm font-medium text-gray-900">
                       Jane Cooper
                     </div>
@@ -129,7 +98,38 @@ function Cattle() {
               <td className="px-6 py-4 whitespace-nowrap">
                 <div className="flex items-center">
                    
-                  <div className="ml-4">
+                  <div className=" ">
+                    <div className="text-sm font-medium text-gray-900">
+                      Jane Cooper
+                    </div>
+                    <div className="text-sm text-gray-500">
+                      jane.cooper@example.com
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
+                <div className="text-sm text-gray-500">Optimization</div>
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                  Active
+                </span>
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                Admin
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                <a href="#" className="text-indigo-600 hover:text-indigo-900">Edit</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <div className="flex items-center">
+                   
+                  <div className=" ">
                     <div className="text-sm font-medium text-gray-900">
                       Jane Cooper
                     </div>
