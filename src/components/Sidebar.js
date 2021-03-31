@@ -3,8 +3,8 @@ function Sidebar() {
   return (
    
     <div className="flex flex-row ">
-      <div className="scrollbar-thin w-full scrollbar-thumb-gray-300 scrollbar-track-white overflow-y-scroll scrollbar-thumb-rounded-full bg-white items-stretch h-screen shadow-2xl ">
-        <div className="p-6 bg-blue-900 ">
+      <div className="scrollbar-thin w-full  scrollbar-thumb-gray-300 scrollbar-track-white overflow-y-scroll scrollbar-thumb-rounded-full bg-white items-stretch h-screen shadow-2xl ">
+        <div className="p-6 bg-blue-900 h-20">
           <div className="flex flex-row justify-start items-center">
             <img
               className="h-10 w-10 rounded-full"
@@ -30,7 +30,7 @@ function Sidebar() {
             View Profile
           </button>
         </div>
-        <div className="space-y-2">
+        <div className="space-y-2 ">
           <p className=" font-bold pl-4 pt-4 mb-6 text-sm">NAVIGATIONAL MENU</p>
           <div className="bg-transparent py-2 rounded-r-full hover:bg-gray-200 mr-2 hover:text-blue-500">
             <div className="flex flex-row items-center ml-4">

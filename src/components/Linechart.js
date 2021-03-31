@@ -18,7 +18,7 @@ function Linechart() {
     return (
         <>
         <div className="flex justify-center ">
-            <div className="w-full">
+            <div className="w-full ">
             <Line data={data}/>
             </div>
             </div>
