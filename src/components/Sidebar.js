@@ -26,9 +26,11 @@ function Sidebar() {
           ></img>
           <p className="text-black font-bold">Emma Tailor</p>
           <p className="text-black font-semibold opacity-70">Senior Web devloper</p>
+         <Link to="/profile">
           <button className="py-2 px-4 bg-blue-900 rounded-lg text-sm text-white text-center ">
             View Profile
           </button>
+          </Link>
         </div>
         <div className="space-y-2 ">
           <p className=" font-bold pl-4 pt-4 mb-6 text-sm">NAVIGATIONAL MENU</p>
