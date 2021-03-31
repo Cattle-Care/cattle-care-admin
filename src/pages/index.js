@@ -4,6 +4,9 @@ import User from '../components/User';
 import Home from './Home';
 import Profile from "../components/Profile";
 import Cattle from "../components/Cattle";
+import Categories from "../components/Categories";
+
+
 // import Users from './Users'
 class App extends React.Component {
   render() {
@@ -16,6 +19,7 @@ class App extends React.Component {
             <Route exact path="/dashboard" component={Home} />
             <Route exact path="/cattle" component={Cattle} />
             <Route exact path="/user" component={User} />
+            <Route exact path="/categories" component={Categories} />
             
           </Switch>
         </BrowserRouter>
