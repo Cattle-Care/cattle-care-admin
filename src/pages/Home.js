@@ -1,16 +1,13 @@
-// import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
-import { Link } from 'react-router-dom';
-import Sidebar from '../components/Sidebar';
-import Cattle from "../components/Cattle";
-import Dashboard from "../components/Dashboard";
-import LineChart from "../components/Linechart";
-import Layout from '../components/Layout';
+import React from 'react';
+import Layout from '../components/global/Layout';
+import Dashboard from '../components/Dashboard';
+import LineChart from '../components/Linechart';
 
 function Home() {
   return (
     <Layout>
-    <Dashboard/>
-    <LineChart/>
+      <Dashboard />
+      <LineChart />
     </Layout>
   );
 }
