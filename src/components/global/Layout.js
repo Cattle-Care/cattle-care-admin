@@ -6,7 +6,7 @@ import Header from './Header';
 const Layout = ({ children }) => (
   <div className="flex flex-row">
     <div className="w-3/12	">
-      <Sidebar />
+     <Sidebar />
     </div>
     <div className="w-3/4">
       <Header />
