@@ -1,12 +1,11 @@
 import React from 'react';
 import Layout from '../components/global/Layout';
-import Dashboard from '../components/Dashboard';
 import LineChart from '../components/Linechart';
-
+import Dashboard from './Dashboard';
 function Home() {
   return (
     <Layout>
-      <Dashboard />
+      <Dashboard/>
       <LineChart />
     </Layout>
   );

@@ -1,9 +1,10 @@
 import React from 'react';
-import { Pager } from './elements';
-
+// import { Pager } from './elements';
+import Layout from '../components/global/Layout';
 function Categories() {
   return (
-    <Pager>
+    <Layout>
+   {/* <Pager> */}
       <div className="mx-auto  max-w-screen-xl ">
         <div className="flex flex-col w-11/12 mx-auto py-5">
           <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -66,7 +67,8 @@ function Categories() {
           </div>
         </div>
       </div>
-    </Pager>
+   {/* </Pager> */}
+    </Layout>
   );
 }
 
