@@ -1,13 +1,17 @@
 import React from 'react';
+import Header from '../components/global/Header';
 import Layout from '../components/global/Layout';
 import LineChart from '../components/Linechart';
 import Dashboard from './Dashboard';
 function Home() {
   return (
-    <Layout>
-      <Dashboard/>
-      <LineChart />
-    </Layout>
+    <>
+    {/* <Header/> */}
+      <Layout>
+        <Dashboard />
+        <LineChart />
+      </Layout>
+    </>
   );
 }
 
