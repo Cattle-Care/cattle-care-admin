@@ -1,10 +1,12 @@
 import React from 'react';
+import  Pager  from '../components/elements/Pager';
 import Layout from '../components/global/Layout';
 function Cattle() {
   const [showModal, setShowModal] = React.useState(false);
   return (
     <>
       <Layout>
+      <Pager>
         <div className="mx-auto  max-w-screen-xl ">
           <div className="flex justify-end items-center   h-20">
             <button
@@ -244,6 +246,7 @@ function Cattle() {
             </div>
           </div>
         </div>
+        </Pager>
       </Layout>
     </>
   );
