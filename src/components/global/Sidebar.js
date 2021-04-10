@@ -4,10 +4,10 @@ import { DashBoardIcon, CattleIcon, UsersIcon, CategoriesIcon, GlobalThermalIcon
 
 function Sidebar() {
   return (
-    <div className="flex flex-row ">
-      <div className="scrollbar-thin w-full  scrollbar-thumb-gray-300 scrollbar-track-white overflow-y-scroll scrollbar-thumb-rounded-full bg-white items-stretch h-screen shadow-md ">
-        {/* <div className="p-6 bg-blue-900 h-20">
-          <div className="flex flex-row justify-start items-center">
+    <div className="flex flex-row  ">
+      <div className=" fixed  w-1/5 bg-white   h-screen shadow-md ">
+        <div className="  py-5 bg-blue-900 h-20">
+          <div className="flex flex-row justify-center items-center">
             <img
               className="h-10 w-10 rounded-full"
               src="https://st4.depositphotos.com/15809744/21290/v/380/depositphotos_212905838-stock-illustration-black-angus-cattle-logo-emblem.jpg"
@@ -15,9 +15,9 @@ function Sidebar() {
             />
             <p className="pl-2 text-white text-lg font-bold">Cattle Care</p>
           </div>
-        </div> */}
+        </div>
         <div
-          className="py-4 flex flex-col justify-center items-center space-y-2 bg-gray-200"
+          className="py-4 flex flex-col justify-center items-center space-y-2   bg-gray-200"
 
         >
           <img
