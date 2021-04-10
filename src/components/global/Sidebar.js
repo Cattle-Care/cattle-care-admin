@@ -41,8 +41,8 @@ function Sidebar() {
           <div className="bg-transparent py-2 rounded-r-full hover:bg-gray-200 mr-2 hover:text-blue-500">
             <div className="flex flex-row items-center ml-4">
               <DashBoardIcon />
-              <Link to="/dashboard">
-                <a href="/" className="ml-4 text-sm font-semibold">
+              <Link to="/">
+                <a href="#" className="ml-4 text-sm font-semibold">
                   Dashboard
                 </a>
               </Link>
