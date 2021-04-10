@@ -1,11 +1,12 @@
  
 import React from "react";
 import Layout from '../components/global/Layout';
-// import Layout from '../components/Layout';
+import  Pager  from '../components/elements/Pager';
 export default function User() {
   return (
     <>
        <Layout>
+         <Pager>
       <div class="flex flex-col  w-11/12 mx-auto py-5">
         <div class="-my-2 -ml-8">
           <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -196,6 +197,7 @@ export default function User() {
           </div>
         </div>
       </div>
+      </Pager>
       </Layout>
     </>
   );
