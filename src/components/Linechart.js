@@ -1,7 +1,8 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
-import  Pager  from '../components/elements/Pager';
-function Linechart() {
+import { Pager } from './elements';
+
+function LineChart() {
   const data = {
     labels: ['Jan', 'Feb', 'March', 'April', 'May'],
 
@@ -14,15 +15,15 @@ function Linechart() {
   };
   return (
     <>
-    <Pager>
-      <div className="flex justify-center ">
-        <div className="w-full ">
-          <Line data={data} />
+      <Pager>
+        <div className="flex justify-center ">
+          <div className="w-full ">
+            <Line data={data} />
+          </div>
         </div>
-      </div>
       </Pager>
     </>
   );
 }
 
-export default Linechart;
+export default LineChart;

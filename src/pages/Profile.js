@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/global/Layout';
+
 function Profile() {
   return (
     <>
@@ -9,6 +10,7 @@ function Profile() {
             <img
               src=" https://cdn0.iconfinder.com/data/icons/avatar-batch-1/512/profile_icon-11-128.png"
               className="rounded-full border-solid border-white border-2 -mt-3"
+              alt="profile"
             />
           </div>
           <div className="text-center text-gray-300 px-3 pb-6 pt-2">

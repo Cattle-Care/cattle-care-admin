@@ -1,6 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { DashBoardIcon, CattleIcon, UsersIcon, CategoriesIcon, GlobalThermalIcon, LogoutIcon } from '../svgs';
+import {
+  DashBoardIcon,
+  CattleIcon,
+  UsersIcon,
+  CategoriesIcon,
+  GlobalThermalIcon,
+  LogoutIcon,
+} from '../svgs';
 
 function Sidebar() {
   return (
@@ -16,10 +23,7 @@ function Sidebar() {
             <p className="pl-2 text-white text-lg font-bold">Cattle Care</p>
           </div>
         </div>
-        <div
-          className="py-4 flex flex-col justify-center items-center space-y-2   bg-gray-200"
-
-        >
+        <div className="py-4 flex flex-col justify-center items-center space-y-2   bg-gray-200">
           <img
             className="h-12 w-auto rounded-full"
             src="https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584__340.png"
@@ -42,7 +46,7 @@ function Sidebar() {
             <div className="flex flex-row items-center ml-4">
               <DashBoardIcon />
               <Link to="/">
-                <a href="#" className="ml-4 text-sm font-semibold">
+                <a href="/" className="ml-4 text-sm font-semibold">
                   Dashboard
                 </a>
               </Link>
@@ -50,9 +54,9 @@ function Sidebar() {
           </div>
           <div className="bg-transparent py-2 rounded-r-full hover:bg-gray-200 mr-2 hover:text-blue-500">
             <div className="flex flex-row items-center ml-4">
-            <CattleIcon />
+              <CattleIcon />
               <Link to="/cattle">
-                <a href="#" className="ml-4 text-sm font-semibold">
+                <a href="/" className="ml-4 text-sm font-semibold">
                   Cattle
                 </a>
               </Link>
@@ -60,9 +64,9 @@ function Sidebar() {
           </div>
           <div className="bg-transparent py-2 rounded-r-full hover:bg-gray-200 mr-2 hover:text-blue-500">
             <div className="flex flex-row items-center ml-4">
-              <UsersIcon/>
+              <UsersIcon />
               <Link to="/users">
-                <a href="#" className="ml-4 text-sm font-semibold">
+                <a href="/" className="ml-4 text-sm font-semibold">
                   Users
                 </a>
               </Link>
@@ -70,9 +74,9 @@ function Sidebar() {
           </div>
           <div className="bg-transparent py-2 rounded-r-full hover:bg-gray-200 mr-2 hover:text-blue-500">
             <div className="flex flex-row items-center ml-4">
-              <CategoriesIcon/>
+              <CategoriesIcon />
               <Link to="/categories">
-                <a href="#" className="ml-4 text-sm font-semibold">
+                <a href="/" className="ml-4 text-sm font-semibold">
                   Categories
                 </a>
               </Link>
@@ -80,16 +84,16 @@ function Sidebar() {
           </div>
           <div className="bg-transparent py-2 rounded-r-full hover:bg-gray-200 mr-2 hover:text-blue-500">
             <div className="flex flex-row items-center ml-4">
-              <GlobalThermalIcon/>
-              <a href="#" className="ml-4 text-sm font-semibold">
-              Global thermal stress
+              <GlobalThermalIcon />
+              <a href="/" className="ml-4 text-sm font-semibold">
+                Global thermal stress
               </a>
             </div>
           </div>
           <div className="bg-transparent py-2 rounded-r-full hover:bg-gray-200 mr-2 hover:text-blue-500">
             <div className="flex flex-row items-center ml-4">
-              <LogoutIcon/>
-              <a href="#" className="ml-4 text-sm font-semibold">
+              <LogoutIcon />
+              <a href="/" className="ml-4 text-sm font-semibold">
                 Logout
               </a>
             </div>

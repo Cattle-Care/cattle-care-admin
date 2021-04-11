@@ -1,11 +1,11 @@
 import React from 'react';
-import  Pager  from '../components/elements/Pager';
+import Pager from '../components/elements/Pager';
 import Layout from '../components/global/Layout';
+
 function Cattle() {
   const [showModal, setShowModal] = React.useState(false);
   return (
-    <>
-      <Layout>
+    <Layout>
       <Pager>
         <div className="mx-auto  max-w-screen-xl ">
           <div className="flex justify-end items-center   h-20">
@@ -41,6 +41,7 @@ function Cattle() {
                     <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                       <h3 className="text-3xl font-semibold">Add Cattle</h3>
                       <button
+                        type="button"
                         className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                         onClick={() => setShowModal(false)}
                       />
@@ -157,7 +158,7 @@ function Cattle() {
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
                         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <a href="#" className="text-indigo-600 hover:text-indigo-900">
+                          <a href="/" className="text-indigo-600 hover:text-indigo-900">
                             Edit
                           </a>
                         </td>
@@ -182,33 +183,7 @@ function Cattle() {
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
                         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <a href="#" className="text-indigo-600 hover:text-indigo-900">
-                            Edit
-                          </a>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="flex items-center">
-                            <div className=" ">
-                              <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
-                              <div className="text-sm text-gray-500">jane.cooper@example.com</div>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
-                          <div className="text-sm text-gray-500">Optimization</div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                            Active
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <a href="#" className="text-indigo-600 hover:text-indigo-900">
+                          <a href="/" className="text-indigo-600 hover:text-indigo-900">
                             Edit
                           </a>
                         </td>
@@ -234,7 +209,33 @@ function Cattle() {
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
                         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <a href="#" className="text-indigo-600 hover:text-indigo-900">
+                          <a href="/" className="text-indigo-600 hover:text-indigo-900">
+                            Edit
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <div className="flex items-center">
+                            <div className=" ">
+                              <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
+                              <div className="text-sm text-gray-500">jane.cooper@example.com</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
+                          <div className="text-sm text-gray-500">Optimization</div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                            Active
+                          </span>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <a href="/" className="text-indigo-600 hover:text-indigo-900">
                             Edit
                           </a>
                         </td>
@@ -246,9 +247,8 @@ function Cattle() {
             </div>
           </div>
         </div>
-        </Pager>
-      </Layout>
-    </>
+      </Pager>
+    </Layout>
   );
 }
 

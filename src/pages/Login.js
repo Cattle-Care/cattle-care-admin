@@ -21,9 +21,9 @@ function Login() {
           <div className="w-96 h-96   ">
             <h2 className="text-blue-600 text-2xl  font-medium title-font mb-5">Login To Admin</h2>
             <div className="relative mb-4">
-              <label htmlFor="full-name" className="leading-7 text-sm font-semibold text-blue-600">
+              <p htmlFor="full-name" className="leading-7 text-sm font-semibold text-blue-600">
                 Email
-              </label>
+              </p>
               <div className="text-blue-600 absolute py-2">
                 <MailOutlineIcon />
               </div>
@@ -35,9 +35,7 @@ function Login() {
               />
             </div>
             <div className="relative mb-4">
-              <label htmlFor="email" className="leading-7 text-sm font-semibold text-blue-600">
-                Password
-              </label>
+              <p className="leading-7 text-sm font-semibold text-blue-600">Password</p>
               <div className="text-blue-600 absolute py-2">
                 <LockOutlinedIcon />
               </div>
