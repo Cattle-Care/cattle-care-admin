@@ -30,11 +30,11 @@ function Login() {
               </div>
             </div>
             <Formik
-              initialValues={{ firstName: '', lastName: '' }}
+              initialValues={{ email: '', password: '' }}
               validate={values => {
                 const errors = {};
-                if (!values.firstName) {
-                  errors.firstName = 'Required';
+                if (!values.email) {
+                  errors.email = 'Required';
                 }
                 return errors;
               }}
@@ -45,14 +45,14 @@ function Login() {
                 setSubmitting(false);
               }}
             >
-              {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
+              {({ values, handleChange, handleBlur, handleSubmit }) => (
                 <form onSubmit={handleSubmit}>
                   <input
                     type="text"
                     name="email"
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    value={values.lastName}
+                    value={values.email}
                     className="w-full p-2 bg-transparent focus:border-b-4 focus:border-blue-900 hover:border-green-400 px-8 border-b-2 text-white border-blue-700  outline-none "
                   />
                   <div className="relative mb-4">
@@ -67,13 +67,12 @@ function Login() {
                     name="password"
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    value={values.firstName}
+                    value={values.password}
                     className="w-full p-2 bg-transparent focus:border-blue-900 hover:border-green-400 px-8  border-b-2 text-white  border-blue-700  outline-none "
                   />
 
                   <button
                     type="submit"
-                    disabled={isSubmitting}
                     className="text-gray-200 bg-blue-600 border-0 py-2 my-2 px-8 focus:outline-none
                     hover:bg-blue-700 rounded text-lg"
                   >
