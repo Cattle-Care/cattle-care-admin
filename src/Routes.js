@@ -26,11 +26,11 @@ const App = () => (
     <BrowserRouter>
       <Switch>
         <PrivateRoute exact path="/" component={Home} />
-        <PrivateRoute exact path="/login" component={Login} />
-        <Route exact path="/users" component={Users} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/cattle" component={Cattle} />
-        <Route exact path="/categories" component={Categories} />
+        <Route exact path="/login" component={Login} />
+        <PrivateRoute exact path="/users" component={Users} />
+        <PrivateRoute exact path="/profile" component={Profile} />
+        <PrivateRoute exact path="/cattle" component={Cattle} />
+        <PrivateRoute exact path="/categories" component={Categories} />
       </Switch>
     </BrowserRouter>
   </ApolloProvider>

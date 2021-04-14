@@ -1,6 +1,7 @@
 import React from 'react';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import { Formik } from 'formik';
 
 function Login() {
   return (
@@ -27,36 +28,64 @@ function Login() {
               <div className="text-blue-600 absolute py-2">
                 <MailOutlineIcon />
               </div>
-              <input
-                type="text"
-                id="email "
-                name="email"
-                className="w-full p-2 bg-transparent focus:border-b-4 focus:border-blue-900 hover:border-green-400 px-8 border-b-2 text-white border-blue-700  outline-none "
-              />
             </div>
-            <div className="relative mb-4">
-              <p className="leading-7 text-sm font-semibold text-blue-600">Password</p>
-              <div className="text-blue-600 absolute py-2">
-                <LockOutlinedIcon />
-              </div>
-              <input
-                type="email"
-                id="password"
-                name="password"
-                className="w-full p-2 bg-transparent focus:border-blue-900 hover:border-green-400 px-8  border-b-2 text-white  border-blue-700  outline-none "
-              />
-            </div>
-
-            <button
-              type="button"
-              className="text-gray-200 bg-blue-600 border-0 py-2 my-2 px-8 focus:outline-none hover:bg-blue-700 rounded text-lg"
+            <Formik
+              initialValues={{ firstName: '', lastName: '' }}
+              validate={values => {
+                const errors = {};
+                if (!values.firstName) {
+                  errors.firstName = 'Required';
+                }
+                return errors;
+              }}
+              onSubmit={(values, { setSubmitting }) => {
+                console.log('value', values);
+                // eslint-disable-next-line no-alert
+                alert(JSON.stringify(values, null, 2));
+                setSubmitting(false);
+              }}
             >
-              Login
-            </button>
+              {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
+                <form onSubmit={handleSubmit}>
+                  <input
+                    type="text"
+                    name="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.lastName}
+                    className="w-full p-2 bg-transparent focus:border-b-4 focus:border-blue-900 hover:border-green-400 px-8 border-b-2 text-white border-blue-700  outline-none "
+                  />
+                  <div className="relative mb-4">
+                    <p className="leading-7 text-sm font-semibold text-blue-600">Password</p>
+                    <div className="text-blue-600 absolute py-2">
+                      <LockOutlinedIcon />
+                    </div>
+                  </div>
 
-            <p className="text-xs text-blue-600 mt-3 font-semibold">
-              Please Enter Your Email And Password
-            </p>
+                  <input
+                    type="text"
+                    name="password"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.firstName}
+                    className="w-full p-2 bg-transparent focus:border-blue-900 hover:border-green-400 px-8  border-b-2 text-white  border-blue-700  outline-none "
+                  />
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="text-gray-200 bg-blue-600 border-0 py-2 my-2 px-8 focus:outline-none
+                    hover:bg-blue-700 rounded text-lg"
+                  >
+                    Login
+                  </button>
+                </form>
+              )}
+
+              <p className="text-xs text-blue-600 mt-3 font-semibold">
+                Please Enter Your Email And Password
+              </p>
+            </Formik>
           </div>
         </div>
       </div>
