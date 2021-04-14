@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/global/Layout';
-import Pager from '../components/elements/Pager';
+import { Pager } from '../components/elements';
 
 export default function User() {
   return (

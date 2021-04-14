@@ -1,5 +1,5 @@
 import React from 'react';
-import Pager from '../components/elements/Pager';
+import { Pager } from '../components/elements';
 import Layout from '../components/global/Layout';
 
 function Cattle() {

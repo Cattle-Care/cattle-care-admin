@@ -5,7 +5,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import PeopleIcon from '@material-ui/icons/People';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import Pager from '../components/elements/Pager';
+import { Pager } from '../components/elements';
 
 function Dashboard() {
   return (
