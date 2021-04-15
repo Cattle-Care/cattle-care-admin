@@ -16,7 +16,7 @@
     "no-unused-vars": "off",
     "react/jsx-props-no-spreading":0,
     "eslint-disable-next-line":0,
-    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-imports": "warn",
     "unused-imports/no-unused-vars": [
       "error",
       {
