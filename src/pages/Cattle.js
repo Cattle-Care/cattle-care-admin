@@ -1,9 +1,29 @@
 import React from 'react';
+import { Formik } from 'formik';
+import { gql, useMutation } from '@apollo/client';
 import { Pager } from '../components/elements';
 import Layout from '../components/global/Layout';
 
-function Cattle() {
+const addCattleMutation = gql`
+  mutation addCattle($input: CattleInput!) {
+    addCattle(input: $input) {
+      id
+      name
+      age
+    }
+  }
+`;
+
+// eslint-disable-next-line react/prop-types
+function Cattle({ onSubmit }) {
   const [showModal, setShowModal] = React.useState(false);
+
+  const [loginAction] = useMutation(addCattleMutation, {
+    onCompleted: ({ added }) => {
+      console.log('added', added);
+    },
+  });
+
   return (
     <Layout>
       <Pager>
@@ -36,7 +56,7 @@ function Cattle() {
               <div className="justify-center  items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                 <div className="relative w-auto my-6 mx-auto max-w-3xl">
                   {/* content */}
-                  <div className="border-0 left-16 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                  <div className="border-0 px-28 left-16 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                     {/* header */}
                     <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                       <h3 className="text-3xl font-semibold">Add Cattle</h3>
@@ -50,28 +70,62 @@ function Cattle() {
 
                     <div className="relative p-6 flex-auto ">
                       <div className="my-4  text-lg leading-relaxed">
-                        <input
-                          type="text"
-                          id="email "
-                          name="email"
-                          className="w-full p-2 bg-transparent focus:border-blue-900 hover:border-green-400 px-8 border-b-2 text-black border-blue-700  outline-none "
-                        />
-                      </div>
-                      <div className="my-4 text-lg leading-relaxed">
-                        <input
-                          type="text"
-                          id="email "
-                          name="email"
-                          className="w-full p-2 bg-transparent focus:border-blue-900 hover:border-green-400 px-8 border-b-2 text-black border-blue-700   outline-none "
-                        />
-                      </div>
-                      <div className="my-4  text-lg leading-relaxed">
-                        <input
-                          type="text"
-                          id="email "
-                          name="email"
-                          className="w-full p-2 bg-transparent focus:border-blue-900 hover:border-green-400 px-8 border-b-2 text-black border-blue-700   outline-none "
-                        />
+                        <Formik
+                          initialValues={{ name: '', age: '', category: '', weight: '' }}
+                          validate={values => {
+                            const errors = {};
+                            if (!values.name) {
+                              errors.name = 'Required';
+                            }
+                            return errors;
+                          }}
+                        >
+                          {({ values, handleChange, handleBlur, handleSubmit }) => (
+                            <form
+                              onSubmit={event => {
+                                event.preventDefault();
+                                handleSubmit();
+                              }}
+                            >
+                              <div className="my-2 text-gray-400">Name</div>
+                              <input
+                                type="text"
+                                name="name"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.name}
+                                className="w-full p-2 bg-transparent focus:border-b-4 focus:border-blue-900 hover:border-green-400 px-8 border-b-2 text-black border-blue-700  outline-none "
+                              />
+                              <div className="my-2 text-gray-400">Age</div>
+                              <input
+                                type="text"
+                                name="age"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.age}
+                                className="w-full p-2 bg-transparent focus:border-blue-900 hover:border-green-400 px-8 border-b-2 text-black border-blue-700   outline-none "
+                              />
+                              <div className="leading-10 text-gray-400">Category</div>
+                              <input
+                                type="text"
+                                name="category"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.category}
+                                className="w-full p-2  bg-transparent focus:border-blue-900 hover:border-green-400 px-8 border-b-2 text-black border-blue-700   outline-none "
+                              />
+                              <div className=" text-gray-400">Weight</div>
+                              <input
+                                type="text"
+                                name="weight"
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.weight}
+                                className="w-full p-2 bg-transparent focus:border-blue-900 hover:border-green-400 px-8 border-b-2 text-black border-blue-700   outline-none "
+                              />
+                            </form>
+                          )}
+                        </Formik>
                       </div>
                     </div>
                     {/* footer */}
@@ -85,7 +139,7 @@ function Cattle() {
                       </button>
                       <button
                         className="bg-blue-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                        type="button"
+                        type="submit"
                         onClick={() => setShowModal(false)}
                       >
                         Save Changes
