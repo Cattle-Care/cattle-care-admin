@@ -2,8 +2,35 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import { gql, useMutation } from '@apollo/client';
+import PropTypes from 'prop-types';
 
-function Register() {
+const registerMutation = gql`
+  mutation register($input: RegisterInput) {
+    register(input: $input) {
+      jwt
+      user {
+        id
+        email
+        profile {
+          firstName
+          lastName
+        }
+      }
+    }
+  }
+`;
+function Register({ history }) {
+  // eslint-disable-next-line unused-imports/no-unused-vars
+  const [registerAction, { loading = false, error }] = useMutation(registerMutation, {
+    onCompleted: ({ register }) => {
+      window.localStorage.setItem('token', register.jwt);
+      history.push('/');
+      console.log('value of register', register);
+    },
+  });
+  console.log('registerAction', registerAction);
+  console.log('Error Message', error);
   const formik = useFormik({
     // enableReinitialize: true,
     initialValues: {
@@ -27,19 +54,17 @@ function Register() {
     }),
 
     onSubmit: values => {
-      console.log('value of formik', values);
+      const input = {
+        firstName: values.firstName,
+        lastName: values.lastName,
+        email: values.email,
+        password: values.password,
+      };
+      registerAction({ variables: { input } });
+      console.log('values are', input);
     },
-    // onSubmit: () => {
-    //   // const input = {
-    //   //   email: values.email,
-    //   //   firstName: values.firstName,
-    //   //   lastName: values.lastName,
-    //   //   password: values.password,
-    //   // };
-    // },
   });
   const { values, handleBlur, handleChange, handleSubmit, touched, errors } = formik;
-
   return (
     <>
       <div className="w-screen h-screen flex  ">
@@ -107,10 +132,10 @@ function Register() {
               </div>
               <button
                 type="submit"
-                onClick={handleSubmit}
                 className="text-gray-200 bg-blue-600 border-0 py-2 my-2 px-8 focus:outline-none hover:bg-blue-700 rounded text-lg"
               >
-                Register
+                {loading ? 'Loading...' : 'Register'}
+                {/* Register */}
               </button>
               <Link to="/Login">
                 <button
@@ -130,5 +155,7 @@ function Register() {
     </>
   );
 }
-
+Register.propTypes = {
+  history: PropTypes.object.isRequired,
+};
 export default Register;

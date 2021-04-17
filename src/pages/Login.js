@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { gql, useMutation } from '@apollo/client';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-
 import LoginForm from '../components/LoginForm';
 
 const loginMutation = gql`
@@ -28,7 +27,6 @@ function Login({ history }) {
       history.push('/');
     },
   });
-
   return (
     <>
       <div className="w-screen h-screen flex  ">
@@ -42,7 +40,6 @@ function Login({ history }) {
             </p>
           </div>
         </div>
-
         <div className="w-1/2 h-screen flex justify-center items-center  ">
           <div className="w-96 h-96   ">
             <h2 className="text-blue-600 text-2xl  font-medium title-font mb-5">Login To Admin</h2>
@@ -72,8 +69,6 @@ function Login({ history }) {
     </>
   );
 }
-
-Login.defaultProps = {};
 
 Login.propTypes = {
   history: PropTypes.object.isRequired,

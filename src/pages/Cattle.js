@@ -19,7 +19,7 @@ const addCattleMutation = gql`
 function Cattle() {
   const [showModal, setShowModal] = React.useState(false);
 
-  const [addCattleAction, { loading, error }] = useMutation(addCattleMutation, {
+  const [addCattleAction] = useMutation(addCattleMutation, {
     onCompleted: ({ addCattle }) => {
       console.log('addCattle', addCattle);
     },
@@ -72,7 +72,7 @@ function Cattle() {
                     <div className="relative p-6 flex-auto ">
                       <div className="my-4  text-lg leading-relaxed">
                         <AddCattleForm
-                          onSubmit={values => {
+                          onSubmit={() => {
                             addCattleAction({ variables: { input: {} } });
                           }}
                         />

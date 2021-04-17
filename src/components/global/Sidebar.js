@@ -1,4 +1,5 @@
 import React from 'react';
+import { gql, useQuery } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import {
   DashBoardIcon,
@@ -9,9 +10,26 @@ import {
   LogoutIcon,
 } from '../svgs';
 
+const getProfile = gql`
+  query {
+    me {
+      status
+      profile {
+        firstName
+        lastName
+      }
+      email
+    }
+  }
+`;
 const handleClick = () => {
   window.localStorage.clear();
   window.location.reload();
+};
+const getProfileValue = () => {
+  // eslint-disable-next-line unused-imports/no-unused-vars
+  const { error, data, loading } = useQuery(getProfile);
+  console.log('value of data', data);
 };
 function Sidebar() {
   return (
@@ -38,7 +56,8 @@ function Sidebar() {
           <Link to="/profile">
             <button
               type="button"
-              className="py-2 px-4 bg-blue-900 rounded-lg text-sm text-white text-center "
+              onClick={() => getProfileValue}
+              className="py-2 px-4 bg-blue-900 rounded-lg text-sm text-white text-center focus:outline-none "
             >
               View Profile
             </button>
