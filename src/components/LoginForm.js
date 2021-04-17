@@ -2,6 +2,7 @@ import React from 'react';
 
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { Formik } from 'formik';
+import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 function LoginForm({ loading = false, error, onSubmit }) {
@@ -57,6 +58,15 @@ function LoginForm({ loading = false, error, onSubmit }) {
           >
             {loading ? 'Loading...' : 'Login'}
           </button>
+          <Link to="/register">
+            <button
+              type="button"
+              className="text-gray-200 bg-blue-600 border-0 py-2 my-2 px-8 focus:outline-none
+                    hover:bg-blue-700 rounded text-lg ml-8"
+            >
+              Register
+            </button>
+          </Link>
         </form>
       )}
     </Formik>

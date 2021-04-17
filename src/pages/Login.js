@@ -25,8 +25,6 @@ function Login({ history }) {
   const [loginAction, { loading, error }] = useMutation(loginMutation, {
     onCompleted: ({ login }) => {
       window.localStorage.setItem('token', login.jwt);
-      // window.localStorage.clear()
-      // window.location.reload();
       history.push('/');
     },
   });

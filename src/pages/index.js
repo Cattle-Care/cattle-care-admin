@@ -5,3 +5,4 @@ export { default as Dashboard } from './Dashboard';
 export { default as Profile } from './Profile';
 export { default as Cattle } from './Cattle';
 export { default as Categories } from './Categories';
+export { default as Register } from './Register';

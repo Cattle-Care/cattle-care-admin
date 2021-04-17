@@ -9,6 +9,10 @@ import {
   LogoutIcon,
 } from '../svgs';
 
+const handleClick = () => {
+  window.localStorage.clear();
+  window.location.reload();
+};
 function Sidebar() {
   return (
     <div className="flex flex-row  ">
@@ -93,7 +97,7 @@ function Sidebar() {
           <div className="bg-transparent py-2 rounded-r-full hover:bg-gray-200 mr-2 hover:text-blue-500">
             <div className="flex flex-row items-center ml-4">
               <LogoutIcon />
-              <a href="/" className="ml-4 text-sm font-semibold">
+              <a href="/" className="ml-4 text-sm font-semibold" onClick={() => handleClick()}>
                 Logout
               </a>
             </div>
