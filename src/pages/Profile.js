@@ -14,8 +14,8 @@ function Profile() {
             />
           </div>
           <div className="text-center text-gray-300 px-3 pb-6 pt-2">
-            <h3 className=" text-sm bold font-sans">hjsahhsadh</h3>
-            <p className="mt-2 font-sans font-light text-grey-dark">dhgfhdgfhdgfhdgf</p>
+            <h3 className=" text-sm bold font-sans">nasim akhtar</h3>
+            <p className="mt-2 font-sans font-light text-grey-dark">email</p>
           </div>
         </div>
       </Layout>

@@ -132,7 +132,7 @@ function Register({ history }) {
               </div>
               <button
                 type="submit"
-                className="text-gray-200 bg-blue-600 border-0 py-2 my-2 px-8 focus:outline-none hover:bg-blue-700 rounded text-lg"
+                className="text-gray-200 font-semibold bg-blue-600 border-0 py-2 my-2 px-8 focus:outline-none hover:bg-blue-700 rounded text-lg"
               >
                 {loading ? 'Loading...' : 'Register'}
                 {/* Register */}
@@ -140,7 +140,7 @@ function Register({ history }) {
               <Link to="/Login">
                 <button
                   type="button"
-                  className="text-gray-200 bg-blue-600 border-0 py-2 my-2 px-8 ml-4 focus:outline-none hover:bg-blue-700 rounded text-lg"
+                  className="text-blue-700  border-2 font-semibold border-blue-500 py-2 my-2 px-8 ml-4 focus:outline-none hover:bg-gray-200 rounded text-lg"
                 >
                   Login
                 </button>
