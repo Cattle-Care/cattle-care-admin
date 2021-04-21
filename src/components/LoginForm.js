@@ -53,7 +53,7 @@ function LoginForm({ loading = false, error, onSubmit }) {
 
           <button
             type="submit"
-            className="text-gray-200 bg-blue-600 border-0 py-2 my-2 px-8 focus:outline-none
+            className="text-gray-200 font-semibold bg-blue-600 border-0 py-2 my-2 px-8 focus:outline-none
                     hover:bg-blue-700 rounded text-lg"
           >
             {loading ? 'Loading...' : 'Login'}
@@ -61,8 +61,8 @@ function LoginForm({ loading = false, error, onSubmit }) {
           <Link to="/register">
             <button
               type="button"
-              className="text-gray-200 bg-blue-600 border-0 py-2 my-2 px-8 focus:outline-none
-                    hover:bg-blue-700 rounded text-lg ml-8"
+              className="text-blue-700 font-semibold  border-2 border-blue-500 py-2 my-2 px-8 focus:outline-none
+                   hover:bg-gray-200  rounded text-lg ml-8"
             >
               Register
             </button>
