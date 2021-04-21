@@ -2,8 +2,7 @@ import React from 'react';
 import { Formik } from 'formik';
 
 // eslint-disable-next-line react/prop-types
-function CattleForm({ error, onSubmit }) {
-  console.log('error', error);
+function CattleForm({ loading, onSubmit }) {
   return (
     <Formik
       initialValues={{ name: '', age: '', category: '', weight: '' }}
@@ -33,7 +32,7 @@ function CattleForm({ error, onSubmit }) {
           />
 
           <input
-            type="text"
+            type="number"
             name="age"
             onChange={handleChange}
             onBlur={handleBlur}
@@ -51,7 +50,7 @@ function CattleForm({ error, onSubmit }) {
           />
 
           <input
-            type="text"
+            type="number"
             name="weight"
             onChange={handleChange}
             onBlur={handleBlur}
@@ -63,7 +62,7 @@ function CattleForm({ error, onSubmit }) {
             type="submit"
             // onClick={() => setShowModal(false)}
           >
-            Save Changes
+            {loading ? 'Loading...' : 'Save Changes'}
           </button>
         </form>
       )}
