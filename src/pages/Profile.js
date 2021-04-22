@@ -1,7 +1,25 @@
 import React from 'react';
+import { gql, useQuery } from '@apollo/client';
 import Layout from '../components/global/Layout';
 
+const getProfile = gql`
+  query {
+    me {
+      status
+      profile {
+        firstName
+        lastName
+      }
+      email
+    }
+  }
+`;
 function Profile() {
+  // eslint-disable-next-line unused-imports/no-unused-vars
+  const { error, data, loading } = useQuery(getProfile);
+  const email = data ? data.me.email : null;
+  const firstName = data ? data.me.profile.firstName : null;
+  const lastName = data ? data.me.profile.lastName : null;
   return (
     <>
       <Layout>
@@ -14,8 +32,8 @@ function Profile() {
             />
           </div>
           <div className="text-center text-gray-300 px-3 pb-6 pt-2">
-            <h3 className=" text-sm bold font-sans">nasim akhtar</h3>
-            <p className="mt-2 font-sans font-light text-grey-dark">email</p>
+            <h3 className=" text-sm bold font-sans">{`${firstName}${' '}${lastName}`}</h3>
+            <p className="mt-2 font-sans font-light text-grey-dark">{email}</p>
           </div>
         </div>
       </Layout>
