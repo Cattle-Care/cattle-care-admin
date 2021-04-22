@@ -3,7 +3,8 @@ import React from 'react';
 import { gql, useMutation } from '@apollo/client';
 import { Pager } from '../components/elements';
 import Layout from '../components/global/Layout';
-import AddCattleForm from '../components/AddCattleForm';
+import AddCattle from '../components/AddCattle';
+import Item from '../components/Cattle/Item';
 
 const addCattleMutation = gql`
   mutation addCattle($input: CattleInput!) {
@@ -11,6 +12,7 @@ const addCattleMutation = gql`
       id
       name
       age
+      weight
     }
   }
 `;
@@ -19,9 +21,13 @@ const addCattleMutation = gql`
 function Cattle() {
   const [showModal, setShowModal] = React.useState(false);
 
-  const [addCattleAction] = useMutation(addCattleMutation, {
+  const [addCattleAction, { loading }] = useMutation(addCattleMutation, {
     onCompleted: ({ addCattle }) => {
       console.log('addCattle', addCattle);
+      setShowModal(false);
+    },
+    onError: error => {
+      console.log('error', error);
     },
   });
 
@@ -52,55 +58,24 @@ function Cattle() {
               </svg>
             </button>
           </div>
-          {showModal ? (
-            <>
-              <div className="justify-center  items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                <div className="relative w-auto my-6 mx-auto max-w-3xl">
-                  {/* content */}
-                  <div className="border-0 px-28 left-16 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                    {/* header */}
-                    <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                      <h3 className="text-3xl font-semibold">Add Cattle</h3>
-                      <button
-                        type="button"
-                        className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                        onClick={() => setShowModal(false)}
-                      />
-                    </div>
-                    {/* body */}
-
-                    <div className="relative p-6 flex-auto ">
-                      <div className="my-4  text-lg leading-relaxed">
-                        <AddCattleForm
-                          onSubmit={() => {
-                            addCattleAction({ variables: { input: {} } });
-                          }}
-                        />
-                      </div>
-                    </div>
-                    {/* footer */}
-                    <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                      <button
-                        className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                        type="button"
-                        onClick={() => setShowModal(false)}
-                      >
-                        Close
-                      </button>
-                      <button
-                        className="bg-blue-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                        type="submit"
-                        onClick={() => setShowModal(false)}
-                      >
-                        Save Changes
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="opacity-25 fixed inset-0 z-40 bg-black" />
-            </>
-          ) : null}
+          {showModal && (
+            <AddCattle
+              loading={loading}
+              onSubmit={values => {
+                addCattleAction({
+                  variables: {
+                    input: {
+                      name: values.name,
+                      age: parseInt(values.age, 10),
+                      category: values.category,
+                      weight: parseInt(values.weight, 10),
+                    },
+                  },
+                });
+              }}
+              onClose={() => setShowModal(false)}
+            />
+          )}
 
           <div className="flex flex-col w-11/12 mx-auto py-5">
             <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -142,108 +117,11 @@ function Cattle() {
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
-                      <tr>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="flex items-center">
-                            <div className=" ">
-                              <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
-                              <div className="text-sm text-gray-500">jane.cooper@example.com</div>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
-                          <div className="text-sm text-gray-500">Optimization</div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                            Active
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <a href="/" className="text-indigo-600 hover:text-indigo-900">
-                            Edit
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="flex items-center">
-                            <div className=" ">
-                              <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
-                              <div className="text-sm text-gray-500">jane.cooper@example.com</div>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
-                          <div className="text-sm text-gray-500">Optimization</div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                            Active
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <a href="/" className="text-indigo-600 hover:text-indigo-900">
-                            Edit
-                          </a>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="flex items-center">
-                            <div className=" ">
-                              <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
-                              <div className="text-sm text-gray-500">jane.cooper@example.com</div>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
-                          <div className="text-sm text-gray-500">Optimization</div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                            Active
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <a href="/" className="text-indigo-600 hover:text-indigo-900">
-                            Edit
-                          </a>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="flex items-center">
-                            <div className=" ">
-                              <div className="text-sm font-medium text-gray-900">Jane Cooper</div>
-                              <div className="text-sm text-gray-500">jane.cooper@example.com</div>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
-                          <div className="text-sm text-gray-500">Optimization</div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                            Active
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <a href="/" className="text-indigo-600 hover:text-indigo-900">
-                            Edit
-                          </a>
-                        </td>
-                      </tr>
+                      <Item />
+                      <Item />
+                      <Item />
+                      <Item />
+                      <Item />
                     </tbody>
                   </table>
                 </div>

@@ -5,8 +5,8 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import LoginForm from '../components/LoginForm';
 
 const loginMutation = gql`
-  mutation login($input: LoginInput) {
-    login(input: $input) {
+  mutation login($email: String!, $password: String!) {
+    login(input: { email: $email, password: $password }) {
       jwt
       user {
         id
@@ -27,6 +27,7 @@ function Login({ history }) {
       history.push('/');
     },
   });
+
   return (
     <>
       <div className="w-screen h-screen flex  ">
@@ -56,7 +57,7 @@ function Login({ history }) {
               error={error}
               onSubmit={values => {
                 loginAction({
-                  variables: { input: { email: values.email, password: values.password } },
+                  variables: { email: values.email, password: values.password },
                 });
               }}
             />
