@@ -94,19 +94,19 @@ function Cattle() {
                           scope="col"
                           className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                         >
-                          Title
+                          Age
                         </th>
                         <th
                           scope="col"
                           className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                         >
-                          Status
+                          Category
                         </th>
                         <th
                           scope="col"
                           className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                         >
-                          Role
+                          Weight
                         </th>
                         <th
                           scope="col"
@@ -117,10 +117,6 @@ function Cattle() {
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
-                      <Item />
-                      <Item />
-                      <Item />
-                      <Item />
                       <Item />
                     </tbody>
                   </table>
