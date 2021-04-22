@@ -32,7 +32,7 @@ function Sidebar() {
   // eslint-disable-next-line unused-imports/no-unused-vars
   const [value, setValue] = useState();
   const firstName = data ? data.me.profile.firstName : null;
-  const lasttName = data ? data.me.profile.lastName : null;
+  const lastName = data ? data.me.profile.lastName : null;
   // const lasttName = data ? data.me.profile.lasttName : null;
   return (
     <div className="flex flex-row  ">
@@ -53,9 +53,7 @@ function Sidebar() {
             src="https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584__340.png"
             alt="user-img"
           />
-          <p className="text-black font-bold">
-            {firstName} <span>{lasttName}</span>
-          </p>
+          <p className="text-black font-bold">{`${firstName}${' '} ${lastName}`}</p>
           <p className="text-black font-semibold opacity-70">Senior Web devloper</p>
           <Link to="/profile">
             <button
