@@ -41,14 +41,17 @@ function CattleForm({ loading, onSubmit }) {
             className="w-full  bg-transparent focus:border-blue-900 hover:border-green-400  border-b-2 text-black border-blue-500   outline-none "
           />
           <h1 className="pt-5 text-blue-600">Category</h1>
-          <input
-            type="text"
+          <select
+            className="w-full  bg-transparent focus:border-blue-900 hover:border-green-400  border-b-2 text-black border-blue-500   outline-none"
             name="category"
+            value={values.category}
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.category}
-            className="w-full bg-transparent focus:border-blue-900 hover:border-green-400  border-b-2 text-black border-blue-500   outline-none "
-          />
+          >
+            <option value="zebu" label="zebu" />
+            <option value="murrah" label="murrah" />
+            <option value="crossBreed" label="crossBreed" />
+          </select>
           <h1 className="pt-5 text-blue-600">Weight</h1>
           <input
             type="number"
