@@ -13,7 +13,13 @@ const GET_CATTLE = gql`
   }
 `;
 function Item() {
-  const { data } = useQuery(GET_CATTLE);
+  const { data, loading, error } = useQuery(GET_CATTLE);
+  if (loading) {
+    return 'loading..';
+  }
+  if (error) {
+    return error.message;
+  }
   return (
     <>
       {data.allCattle.map(cattle => (
